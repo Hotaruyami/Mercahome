@@ -26,9 +26,8 @@ int main() {
 	  cin >> L;
 	  Cjt_clients clients;
 	  
-	  for(int j = 0; j < L; ++j){
-	  clients.afegir_client(); //Nou client
-	  clients.llegir_client(); // Afegim al client, l'instant de recollida, productes, etc.
+	  clients.llegir(L);
+	  
 	  }
 	  
 	  

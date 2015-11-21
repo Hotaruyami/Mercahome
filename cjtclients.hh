@@ -11,7 +11,8 @@ struct client {
 	string instant;
 	int numero;
 	vector <product> productes;
-	string tempsc = 00:00:00;
+	string tempsc;
+	string tempscua;
 };
 
 class cjtclients {
@@ -40,7 +41,7 @@ public:
 
 	//Modificadores
 	
-	void afegir_client(client& c) const;
+	void afegir_client(client& c) ;
 	/**
 	\pre cert
 	\post afegim un nou client a cjt_clients */
@@ -48,9 +49,9 @@ public:
 	//Consultores:
 	
 	
+	int nombre_clients();
 	
 	
-	int nclients();
 	/**
 	\pre cert
 	\post retorna el numero de clients del cjt_clients
@@ -58,7 +59,7 @@ public:
 	
 	//Lectura i escriptura
 
-	void llegir();
+	void llegir(int& L);
 	/** 
 	\pre hi ha preparats al canal estandard d’entrada dos integer i un strign
 	\post el parametre implicit passa a tenir els atributs llegits del canal estandard d’entrada.

@@ -11,7 +11,7 @@ producte::producte(){
 producte::producte(string nom, double preu, int tempsc, string seccio){
 	
 	
-	if (tempsc < 0 or preu < 0 or seccio.size() = 2) cout << "error" << endl;
+	if (tempsc < 0 or preu < 0 or seccio.size() == 2) cout << "error" << endl;
 
 	else {
 		this->nom = nom;
@@ -46,7 +46,7 @@ void producte::llegir(){
 	if (aux >= 0 and aux2 >= 0 and aux3.size() == 2){
 	cin >> aux >> aux3 >> aux2;
 	}
-	else cout << “error" << endl;
+	else cout << "error" << endl;
 	
 }
 void producte::escriure(){

@@ -7,7 +7,7 @@
 
 class caixa {
 	private:
-		
+		int maxcua;
 		string hora;
 
 		int estat ; 
@@ -16,13 +16,18 @@ class caixa {
 		
 		queue <client> cua;
 		
+		void esborrar_client();
+		/**
+		\pre cua amb 1 o mes clients
+		\post s'esborra el primer client de la cua*/
+		
 		
 
 	public:
 	
 	//Constructores
 
-		caixa();
+		caixa(int estat;);
 
 		/**
 		\pre cert.
@@ -41,20 +46,17 @@ class caixa {
 		\post Hi ha un client menys a la cua, s’ha sumat el temps de cobrament
 		 del client al temps total de la caixa */	
 		
-		void afegir_client(client &c) const;
+		void afegir_client(client &c) ;
 		
 		/**
 		\pre cert.
 		\post c forma part de la cua */
-		void afegir_estat(int estat);
+		void cambiar_estat(int estat);
 		/**
-		\pre cert.
+		\pre la caixa te estat.
 		\post estat de la caixa = "estat" */
 
-		void esborrar_client();
-		/**
-		\pre cua amb 1 o mes clients
-		\post s'esborra el primer client de la cua*/
+		
 		
 
 
@@ -71,9 +73,9 @@ class caixa {
 		
 		/**
 		\pre hora < 59:59:60 .
-		\post A la hora del parametre implicit se li suma “temps”. */
+		\post A la hora del parametre implicit se li suma “temps” i calcula el temps de cua del ultim client. */
 
-		TempsPagament(int TempsDespl, int TempsCaixa, int TempsCua);
+		int TempsPagament(int TempsDespl, int TempsCaixa, int TempsCua);
 	
 	
 };

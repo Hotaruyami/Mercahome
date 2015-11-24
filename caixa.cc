@@ -27,7 +27,10 @@ void caixa::esborrar_client(){
 	cua.pop();
 
 }
-
+int consultar_hora(){ 
+	//HEM DE TRANSFORMAR-HO A STRING
+	return hora;
+}
 int caixa::estat_caixa(){
 	return estat;
 }

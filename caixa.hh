@@ -3,14 +3,12 @@
 #include "cjtclients.hh"
 #include "producte.hh"
 
-
-
 class caixa {
 	private:
 		int maxcua;
 		string hora;
 
-		int estat ; 
+		int estat; 
 		/** @brief si estat = -1 (tancada), si estat = 0
 		\ (normal), si estat = 1 (rapida) */
 		
@@ -19,19 +17,18 @@ class caixa {
 		void esborrar_client();
 		/**
 		\pre cua amb 1 o mes clients
-		\post s'esborra el primer client de la cua*/
-		
-		
+		\post s'esborra el primer client de la cua*/	
 
 	public:
 	
 	//Constructores
 
-		caixa(int estat;);
+		caixa(int estat);
 
 		/**
 		\pre cert.
 		\post es crea una caixa buida. */
+		
 	
 	//Destructores
 
@@ -39,7 +36,7 @@ class caixa {
 
 	//Modificadores
 
-		void cobrar_client();
+		int cobrar_client();
 
 		/**	
 		\pre cert.
@@ -56,12 +53,10 @@ class caixa {
 		\pre la caixa te estat.
 		\post estat de la caixa = "estat" */
 
-		
-		
-
 
 	//Consultores
-
+		int consultar_hora();
+		
 		int estat_caixa();
 		
 		/**

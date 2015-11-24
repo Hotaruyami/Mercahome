@@ -2,8 +2,7 @@
 
 producte::producte(){
 	nom = "";
-	seccio = ""; 
-	
+	seccio = ""; 	
 	preu = 0;
 	tempsc = 0;
 }

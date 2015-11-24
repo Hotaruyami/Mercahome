@@ -93,5 +93,8 @@ producte cjtclients:consultar_producte(string nom){
 	if (not b) cout << "error" << endl;
 
 }
+void escriure_producte(producte prod){
+	//FER
+}
 	
 }

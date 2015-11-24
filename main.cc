@@ -6,7 +6,7 @@ int main() {
     cin >> ordre;
     while (ordre != "sortir") {
 	if (ordre == "inicialitzar"){
-	  
+	  cjtclients clients;
 	  int R,C,X,N;
 	  cin >> R >> C >> X >> N;
 	  vector <caixa> caixes(X);
@@ -24,7 +24,7 @@ int main() {
 	else if (ordre == "carregar"){
 	  int L;
 	  cin >> L;
-	  Cjt_clients clients;
+	  
 	  
 	  clients.llegir(L);
 	  

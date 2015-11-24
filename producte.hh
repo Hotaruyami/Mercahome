@@ -31,7 +31,7 @@ public:
 
 	/** @brief segurament necessitem creadores diferents, poso la mes general i la mes completa */	
 
-	producte(string nom, int preu, int tempsc, string seccio);
+	producte(string nom, double preu, int tempsc, string seccio);
 /**
 	\pre preu >= 0,tempsc >= 0
 	\post el resultat es un producte amb nom = “nom”, preu = “preu”, tempsc = “tempsc”, seccio = “seccio” */
@@ -45,7 +45,7 @@ public:
 
 //Consultores
 
-	string nom ();
+	string consultar_nom ();
 	
 	/** 
 	\pre el parametre implicit té preu
@@ -61,6 +61,10 @@ public:
 
 	/** \pre el parametre implicit te tempsc
 	\post retorna el temps de cobrament del parametre implicit */
+
+	double consultar_preu();
+	/** \pre el parametre implicit te tempsc
+	    \post retorna el preu del parametre implicit */
 
 //Lectura i Escriptura
 

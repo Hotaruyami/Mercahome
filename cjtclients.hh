@@ -8,10 +8,11 @@ struct product {
 
 struct client {
 
-	int tiquet;
 	string instant;
 	int numero;
 	vector <product> productes;
+	string tempsc;
+	string tempscua;
 };
 
 class cjtclients {
@@ -19,8 +20,10 @@ class cjtclients {
 private:
 
 	vector <client> clients;
-	
+	int maxclients;
+	int nclients;
 	void ordenar_cjt ();
+	
 
 
 public:
@@ -38,26 +41,17 @@ public:
 
 	//Modificadores
 	
-	void afegir_client(client& c) const;
+	void afegir_client(client& c) ;
 	/**
 	\pre cert
 	\post afegim un nou client a cjt_clients */
 
 	//Consultores:
-
-	int temps_de_cua (client& c) const;
-	/**
-	\pre existeix client
-	\post retorna el temps de caixer dels clients anteriors
-	*/
 	
-	int TempsPagament(int TempsDespl, int TempsCaixa, int TempsCua);
 	
-	/**
-	\pre parametres correctes
-	\post retorna el temps de pagament com a suma dels parametres
-	*/
-	int nclients();
+	int nombre_clients();
+	
+	
 	/**
 	\pre cert
 	\post retorna el numero de clients del cjt_clients
@@ -65,16 +59,11 @@ public:
 	
 	//Lectura i escriptura
 
-	void llegir();
+	void llegir(int& L);
 	/** 
 	\pre hi ha preparats al canal estandard d’entrada dos integer i un strign
 	\post el parametre implicit passa a tenir els atributs llegits del canal estandard d’entrada.
 	*/
-
-	void escriure();
-	/**
-	\pre cert
-	\post s’han escrit els atributs del p.i. al canal estandard de sortida*/
 
 };
 

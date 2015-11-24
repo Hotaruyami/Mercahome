@@ -37,19 +37,11 @@ public:
 
 	//Modificadores
 
-		void afegir_producte(Producte prod);
-
-		/**
-		\pre el p.i. no esta ple
-		\post “prod” pertany al p.i. i esta afegit al vector de productes */
+		
 	
 	//consultores
 	
-		producte consultar_producte(string nom);
-
-		/**
-		\pre ”nom” te un format d’entrada valid.
-		\post retorna el producte amb nom “nom”. */
+		
 	
 		vector <producte> productes_seccio(string seccio);
 		
@@ -85,11 +77,7 @@ public:
 
 	//Lectura i escriptura
 	
-		void escriure_producte(producte prod);
-
-		/** 
-		\pre prod existeix a super.
-		\post escriu per el STL el producte prod */
+		
 };
 
 	

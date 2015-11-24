@@ -29,15 +29,13 @@ int main() {
 	  clients.llegir(L);
 	  
 	  }
-	  
-	  
-	  
+	    
 	}
 	else if (ordre == "informacio"){
 	string nom;
 	cin >> nom; //Producte
 	
-	mercat.escriure_producte(mercat.consultar_producte(nom)); 
+	clients.escriure_producte(clients.consultar_producte(nom)); 
 	// Busquem el producte al super i l'escribim per pantalla
 	  
 	}

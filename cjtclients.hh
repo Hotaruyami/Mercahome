@@ -64,6 +64,21 @@ public:
 	\pre hi ha preparats al canal estandard d’entrada dos integer i un strign
 	\post el parametre implicit passa a tenir els atributs llegits del canal estandard d’entrada.
 	*/
+	producte consultar_producte(string nom);
+
+		/**
+		\pre ”nom” te un format d’entrada valid.
+		\post retorna el producte amb nom “nom”. */
+	void escriure_producte(producte prod);
+
+		/** 
+		\pre prod existeix a super.
+		\post escriu per el STL el producte prod */
+	void afegir_producte(Producte prod);
+
+		/**
+		\pre el p.i. no esta ple
+		\post “prod” pertany al p.i. i esta afegit al vector de productes */
 
 };
 

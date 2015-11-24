@@ -8,6 +8,8 @@ cjtclients::cjtclients(){
 }
 cjtclients::~cjtclients(){}
 
+
+
 void cjtclients::afegir_client(client& c){
 	if(nclients < maxclients){ // hi caben clients
 		int i = nclients-1;

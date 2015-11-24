@@ -16,6 +16,9 @@ super::super(vector<vector <seccio>> seccions,vector <caixa> caixes){
 }
 
 super::~super(){}
+void optim (client comprador){
+	//FER
+}
 
 
 vector<producte> super::productes_seccio(string seccio){

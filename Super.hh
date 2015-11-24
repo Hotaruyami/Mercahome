@@ -69,13 +69,7 @@ public:
 		\post Calcula i escriu el temps segons la configuració 
 		de caixes. Per a cada configuració un temps. */
 
-		int TempsDespl(int CaixaDesti);
-
-		/**
-		\pre “CaixaDesti” es una caixa valida.
-		\post calcula el temps de desplaçament de un client segons la caixa assignada. */
-
-	//Lectura i escriptura
+		
 	
 		
 };

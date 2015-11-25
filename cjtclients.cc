@@ -1,14 +1,19 @@
 #include "cjtclients.hh"
 
+
+void ordenar_cjt (){
+
+}
+
 cjtclients::cjtclients(){
 	maxclients = 30;
 	clients = vector<client>(maxclients);
 	nclients = 0;
-	
-	
-	
+		
 }
 cjtclients::~cjtclients(){}
+
+
 
 void cjtclients::afegir_client(client& c){
 	if(nclients < maxclients){ // hi caben clients
@@ -51,20 +56,45 @@ void cjtclients::llegir(int& L){
 		cout << "error" << endl;
 		
 	}
-	else{
+	else{	
+		N = N1;
+		clients[i].instant = aux;
+		clients[i].numero = aux1;
 		
-			
-				N = N1;
-				clients[i].instant = aux;
-				clients[i].numero = aux1;
-			
-				
-			for(int j = 0; j < N; ++j){
-				cin >> clients[i].productes[j].quantitat >> clients[i].productes[j].nom;
-			
-	
+		for(int j = 0; j < N; ++j){
+			cin >> clients[i].productes[j].quantitat >> clients[i].productes[j].nom;
 		}
 	}
+	}
+	void cjtclients::afegir_producte(Producte prod){
+		int i = 0;
+		Producte aux;
+		bool b = false;
+		while (not b and i < productes.size()){
+		if (productes[i]==aux){
+		productes[i] = prod;
+		b = true;
+		}
+		
+		i = i+1;
+		}
+		if (not b)productes.push_back(prod);
+	}
+
+	producte cjtclients:consultar_producte(string nom){
+		int i = 0;
+		bool trobat = false;
+		while (not trobat and i < productes.size()){
+		
+		if(nom == productes[i].consultar_nom()) return productes[i];
+		
+		++i;
+		}
+		if (not b) cout << "error" << endl;
+	}
+
+	void escriure_producte(producte prod){
+		//FER
 	}
 	
 }

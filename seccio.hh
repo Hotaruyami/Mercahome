@@ -35,7 +35,7 @@ class seccio {
 	/**
 	\pre la seccio no te posicio
 	\post la posicio del parametre implicit es "posicio"
-	void afegir_posicio(string posicio);
+	void afegir_posicio(string posicio);*/
 
 	
 	//Consultores

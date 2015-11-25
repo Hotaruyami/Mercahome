@@ -1,4 +1,4 @@
-El#include <iostream>
+#include <iostream>
 using namespace std;
 
 int main() {
@@ -6,7 +6,7 @@ int main() {
     cin >> ordre;
     while (ordre != "sortir") {
 	if (ordre == "inicialitzar"){
-	  
+	  cjtclients clients;
 	  int R,C,X,N;
 	  cin >> R >> C >> X >> N;
 	  vector <caixa> caixes(X);
@@ -16,7 +16,7 @@ int main() {
 	  
 	  for (int i = 0; i < N, ++i) {
 	    aux.llegir(); // Llegim el producte
-	    mercat.afegir_producte(aux); // Afegim el producte al supermercat
+	    clients.afegir_producte(aux); // Afegim el producte al supermercat
 	  }
 	  
 	  
@@ -24,20 +24,17 @@ int main() {
 	else if (ordre == "carregar"){
 	  int L;
 	  cin >> L;
-	  Cjt_clients clients;
 	  
 	  clients.llegir(L);
 	  
 	  }
-	  
-	  
-	  
+	    
 	}
 	else if (ordre == "informacio"){
 	string nom;
 	cin >> nom; //Producte
 	
-	mercat.escriure_producte(mercat.consultar_producte(nom)); 
+	clients.escriure_producte(clients.consultar_producte(nom)); 
 	// Busquem el producte al super i l'escribim per pantalla
 	  
 	}

@@ -66,11 +66,7 @@ string de_int_a_string(int temps) {
 	return hora;
 }
 
-int main(){
-	int a = 0;
-	cin >> a;
-	cout << de_int_a_string(a) << endl;
-}
+
 
 
 int de_string_a_int(string hora) {

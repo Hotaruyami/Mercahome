@@ -48,7 +48,7 @@ public:
 
 	//Consultores:
 	
-	
+	vector <product> vectorprod(client& c);
 	int nombre_clients();
 	
 	

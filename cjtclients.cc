@@ -14,7 +14,15 @@ cjtclients::cjtclients(){
 cjtclients::~cjtclients(){}
 
 
-
+vector <product> cjtclients::vectorprod(client& c){
+	bool b = false;
+	int i = 0;
+	while (not b){
+		if (clients[i] == c) b = true;
+		i = i +1;
+	}
+	return clients[i].productes;
+}
 void cjtclients::afegir_client(client& c){
 	if(nclients < maxclients){ // hi caben clients
 		int i = nclients-1;

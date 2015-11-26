@@ -70,7 +70,6 @@ class caixa {
 		\pre hora < 59:59:60 .
 		\post A la hora del parametre implicit se li suma “temps” i calcula el temps de cua del ultim client. */
 
-		int TempsPagament(int TempsDespl, int TempsCaixa, int TempsCua);
-	
+			
 	
 };

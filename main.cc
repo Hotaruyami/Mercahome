@@ -16,7 +16,8 @@ int main() {
 	  
 	  for (int i = 0; i < N, ++i) {
 	    aux.llegir(); // Llegim el producte
-	    clients.afegir_producte(aux); // Afegim el producte al supermercat
+	    
+	    mercat.afegir_producte(aux); // Afegim el producte al supermercat
 	  }
 	  
 	  

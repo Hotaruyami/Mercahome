@@ -49,7 +49,7 @@ public:
 		\pre la seccio “seccio” existeix.
 		\post retorna un vector amb els productes que pertanyen a la seccio “seccio”. */
 
-		int CaixaDesti(int &Xmax, int &id_client, int &NumProd) const;
+		int CaixaDesti(int &Xmax,int y, int &id_client, int &NumProd,cjtclients & clients);
 
 		/** 
 		\pre el nombre de caixes no és nul
@@ -69,7 +69,8 @@ public:
 		\post Calcula i escriu el temps segons la configuració 
 		de caixes. Per a cada configuració un temps. */
 
-		
+		int TempsPagament(int TempsDespl, int TempsCaixa, int TempsCua);
+
 	
 		
 };

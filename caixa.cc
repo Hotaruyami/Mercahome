@@ -39,18 +39,14 @@ void caixa::esborrar_client(){
 
 }
 int consultar_hora(){ 
-	//HEM DE TRANSFORMAR-HO A STRING
 	return hora;
 }
 int caixa::estat_caixa(){
 	return estat;
 }
-// esta bastan liada la cosa nose com agafar el string i sumarlo xd, miratho aver.
 string caixa::temps_de_la_cua(string temps){
 	int aux = de_string_a_int(temps);
 	aux = aux + de_string_a_int(hora);
 	hora = de_int_a_string(aux);
 	return hora;
-
-	
-	}
+}

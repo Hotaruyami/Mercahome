@@ -37,19 +37,11 @@ public:
 
 	//Modificadores
 
-		void afegir_producte(Producte prod);
-
-		/**
-		\pre el p.i. no esta ple
-		\post “prod” pertany al p.i. i esta afegit al vector de productes */
+		
 	
 	//consultores
 	
-		producte consultar_producte(string nom);
-
-		/**
-		\pre ”nom” te un format d’entrada valid.
-		\post retorna el producte amb nom “nom”. */
+		
 	
 		vector <producte> productes_seccio(string seccio);
 		
@@ -57,7 +49,7 @@ public:
 		\pre la seccio “seccio” existeix.
 		\post retorna un vector amb els productes que pertanyen a la seccio “seccio”. */
 
-		int CaixaDesti(int &Xmax, int &id_client, int &NumProd) const;
+		int CaixaDesti(int &Xmax,int y, int &id_client, int &NumProd,cjtclients & clients);
 
 		/** 
 		\pre el nombre de caixes no és nul
@@ -77,19 +69,10 @@ public:
 		\post Calcula i escriu el temps segons la configuració 
 		de caixes. Per a cada configuració un temps. */
 
-		int TempsDespl(int CaixaDesti);
+		int TempsPagament(int TempsDespl, int TempsCaixa, int TempsCua);
 
-		/**
-		\pre “CaixaDesti” es una caixa valida.
-		\post calcula el temps de desplaçament de un client segons la caixa assignada. */
-
-	//Lectura i escriptura
 	
-		void escriure_producte(producte prod);
-
-		/** 
-		\pre prod existeix a super.
-		\post escriu per el STL el producte prod */
+		
 };
 
 	

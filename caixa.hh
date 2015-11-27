@@ -3,30 +3,32 @@
 #include "cjtclients.hh"
 #include "producte.hh"
 
-
-
 class caixa {
 	private:
-		
+		int maxcua;
 		string hora;
 
-		int estat ; 
+		int estat; 
 		/** @brief si estat = -1 (tancada), si estat = 0
 		\ (normal), si estat = 1 (rapida) */
 		
 		queue <client> cua;
 		
-		
+		void esborrar_client();
+		/**
+		\pre cua amb 1 o mes clients
+		\post s'esborra el primer client de la cua*/	
 
 	public:
 	
 	//Constructores
 
-		caixa();
+		caixa(int estat);
 
 		/**
 		\pre cert.
 		\post es crea una caixa buida. */
+		
 	
 	//Destructores
 
@@ -34,32 +36,27 @@ class caixa {
 
 	//Modificadores
 
-		void cobrar_client();
+		int cobrar_client();
 
 		/**	
 		\pre cert.
 		\post Hi ha un client menys a la cua, s’ha sumat el temps de cobrament
 		 del client al temps total de la caixa */	
 		
-		void afegir_client(client &c) const;
+		void afegir_client(client &c) ;
 		
 		/**
 		\pre cert.
 		\post c forma part de la cua */
-		void afegir_estat(int estat);
+		void cambiar_estat(int estat);
 		/**
-		\pre cert.
+		\pre la caixa te estat.
 		\post estat de la caixa = "estat" */
-
-		void esborrar_client();
-		/**
-		\pre cua amb 1 o mes clients
-		\post s'esborra el primer client de la cua*/
-		
 
 
 	//Consultores
-
+		int consultar_hora();
+		
 		int estat_caixa();
 		
 		/**
@@ -71,8 +68,8 @@ class caixa {
 		
 		/**
 		\pre hora < 59:59:60 .
-		\post A la hora del parametre implicit se li suma “temps”. */
+		\post A la hora del parametre implicit se li suma “temps” i calcula el temps de cua del ultim client. */
 
-	
+			
 	
 };

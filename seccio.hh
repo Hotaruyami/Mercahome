@@ -18,9 +18,9 @@ class seccio {
 	/**
 	\pre cert.
 	\post crea una secció buida */
-
+	
 		
-	seccio(vector<producte>& prod) const;
+	seccio(const vector<producte>& prod,const string posicio) ;
 	
 	/**
 	\pre cert.
@@ -31,9 +31,16 @@ class seccio {
 	
 	~seccio();
 
+	//Modificadores:
+	/**
+	\pre la seccio no te posicio
+	\post la posicio del parametre implicit es "posicio"
+	void afegir_posicio(string posicio);*/
+
+	
 	//Consultores
 	
-	vector<producte> productes(int &r,int &c) const;
+	vector<producte> productes() const;
 	
 	/**
 	\pre cert.

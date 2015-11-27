@@ -102,16 +102,12 @@ void cjtclients::llegir(int& L){
 		int i = 0;
 		bool trobat = false;
 		while (not trobat and i < productes.size()){
-		
-		if(nom == productes[i].consultar_nom()) return productes[i];
-		
-		++i;
+			if(nom == productes[i].consultar_nom()) return productes[i];
+			++i;
 		}
 		if (not b) cout << "error" << endl;
 	}
 
 	void escriure_producte(producte prod){
-		//FER
+		cout << prod.consultar_nom() << " " <<prod.consultar_seccio() << " " << prod.consultar_tempsc() << " " << prod.consultar_preu() << endl;
 	}
-	
-}

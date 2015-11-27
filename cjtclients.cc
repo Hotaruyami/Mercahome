@@ -2,7 +2,16 @@
 
 
 void ordenar_cjt (){
-
+	client aux;
+	for(int j = 1; j < clients.size(); ++j){
+		for(int i = 0; i < clients.size()-j; ++i){
+			if(clients[i].numero > clients[i+1].numero){
+				aux = clients[i];
+				clients[i] = clients[i+1];
+				clients[i+1] = aux;
+			}
+		}
+	}
 }
 
 cjtclients::cjtclients(){
@@ -11,8 +20,8 @@ cjtclients::cjtclients(){
 	nclients = 0;
 		
 }
-cjtclients::~cjtclients(){}
 
+cjtclients::~cjtclients(){}
 
 vector <product> cjtclients::vectorprod(client& c){
 	bool b = false;

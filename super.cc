@@ -28,10 +28,10 @@ vector<producte> super::productes_seccio(string seccio){
 }
 
 int super::CaixaDesti(int &Xmax,int y,client c, int &NumProd,cjtclients &clients) {
-	int i = caixes.size();
+	int i = caixes.size()-1;
 	int caixa = 0;
 	
-	while (i < Xmax - 1){
+	while (i > 0){
 		if (clients.vectorprod(c).size() > 10){
 			if ((caixes[i].n_clients() > 7 and caixes[i-1].estat_caixa() == 0){
 				caixa = i-1;
@@ -65,6 +65,10 @@ int super::SimulacioCaixes(int& normals,int& rapides){
 			}
 		}	
 		else caixes[i].cambiar_estat(-1);
+	}
+	int i = 0;
+	while (i < clients.size()){
+
 	}
 	int caixa = CaixaDesti()
 }

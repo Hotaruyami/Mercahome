@@ -1,23 +1,67 @@
 #include <iostream>
 #include <string>
-using namespace std;
-int de_string_a_int() {
-int temps = 0;
-string aux = "";
 
- int j = 0;
-int i = 2;
-while (hora.size() > 2){
-aux = hora[0];
-aux = aux + hora[1];
+int Caixa_Desti() {
+	int i = 0;
+	int climax = 0;
+	bool b = false;
+	while (i < caixes.size()-1 and not b){
+		if (clients.vectorprod(c).size() > 10){
+			if (caixes[i].n_clients() == caixes[i+1].n_clients()) {
+					if (caixes[i+1].estat_caixa()== 0){
+						
+						caixa = i+1;
+						climax = caixes[i+1].n_clients();
+					}
+					else{
 
-j = stoi(aux.c_str(),nullptr,10);
-temps = temps + j*(60*i);
-i = i - 1;
+						caixa = i;
+						climax = caixes[i+1].n_clients();
+					}
 
-hora.erase(0,3);
-aux = "";
-}
-temps = temps + stoi(hora.c_str(),nullptr,10);
-return temps;
+				}
+			}
+			else if ((caixes[i].n_clients() < caixes[i+1].n_clients() {
+					if (caixes[i].estat_caixa() == 0){
+						b = true;
+						caixa = i; 
+						climax = caixes[i+1].n_clients();
+					}
+					else if (caixes[i].estat_caixa() == 1){
+						b = true;
+						caixa = i + 1;
+						climax = caixes[i+1].n_clients();
+					}
+				}
+				
+
+				
+				
+			}
+			
+		}
+		else {
+			if (caixes[i].n_clients() == caixes[i+1].n_clients() ){
+				if(caixes[i].estat_caixa() == 1){
+					caixa = i;
+					climax = caixes[i+1].n_clients();
+				}
+				else if (caixes[i].estat_caixa() == 0){
+					caixa = i + 1;
+					climax = caixes[i+1].n_clients();
+				}
+				
+				
+			}
+			else  if (caixes[i].n_clients() < caixes[i+1].n_clients()){
+				
+					b = true;
+					caixa = i;
+					climax = caixes[i+1].n_clients();
+				
+			}
+
+		}
+		++i;
+	}
 }

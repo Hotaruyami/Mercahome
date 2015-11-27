@@ -1,10 +1,17 @@
 #include <iostream>
 #include <string>
 using namespace std;
+int de_string_a_int(string hora);
+int main () {
+	cout << de_string_a_int("23:59:59") << endl;
+
+}
+	
 
 string de_int_a_string(int temps) {
 	string hora = "";
 	int segons,minuts,hores;
+
 
 	segons = temps % 60;
 	//si hi ha minuts
@@ -70,22 +77,22 @@ string de_int_a_string(int temps) {
 
 
 int de_string_a_int(string hora) {
-int temps = 0;
+long int temps = 0;
 string aux = "";
 
- int j = 0;
-int i = 2;
+long int j = 0;
+long int i = 2;
 while (hora.size() > 2){
-aux = hora[0];
-aux = aux + hora[1];
+	aux = hora[0];
+	aux = aux + hora[1];
 
-j = stoi(aux.c_str(),nullptr,10);
-temps = temps + j*(60*i);
-i = i - 1;
+	j = stoi(aux.c_str(),nullptr,10);
+	temps = (temps + j)*60;
+	i = i - 1;
 
-hora.erase(0,3);
-aux = "";
+	hora.erase(0,3);
+	aux = "";
 }
-temps = temps + stoi(hora.c_str(),nullptr,10);
-return temps;
+	temps = temps + stoi(hora.c_str(),nullptr,10);
+	return temps;
 }

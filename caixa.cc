@@ -15,11 +15,12 @@ caixa::~caixa(){}
 int caixa::cobrar_client(){
 	cjtclients a;
 	int i = 0;
-	client aux = cua.top();
+	client aux = cua.front();
+	clients.afegir_client(aux);
 	cua.pop();
 	int tempsc = 0;
 	
-	vector <producte> prod = a.vectorprod(c);
+	vector <producte> prod = a.vectorprod(aux);
 	while (i < prod.size()){
 		tempsc = tempsc + prod[i].consultar_tempsc();
 		i = i + 1;

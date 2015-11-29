@@ -51,22 +51,43 @@ int super::CaixaDesti(int &Xmax,int y,client c, int &NumProd,cjtclients &clients
 }
 
 int super::SimulacioCaixes(int& normals,int& rapides){
+	int j = normals;
+	int k = rapides;
 	for (int i = caixes.size()-1; i >= 0; --i){
 		
-			if (normals != 0) {
+			if (j != 0) {
 				caixes[i].cambiar_estat(1);
-				--normals
+				--j;
 			}
-			else if (rapides != 0){
+			else if (k != 0){
 				caixes[i].cambiar_estat(0);
-				--rapides;
+				--k;
 			}
 		
 			else caixes[i].cambiar_estat(-1);
 	}
 	int i = 0;
+	int t;
+	int tempscua;
 	while (i < clients.size()){
+		int desti = caixadesti(clients[i]);
+		caixes[desti].afegir_client(clients[i]);
+		if (caixes[desti].n_clients()==0) {
+			tempscua = 0;
+
+		}
+
+		else tempscua = de_string_a_int(caixes[desti].temps_de_la_cua());
+		caixes[desti].cobrar_client();
+		cout << numero << " " << (caixes.size()-desti) + tempscua << ((caixes.size()-desti) + tempscua) + tempsc << endl;
+		++i;
+		t = t + (caixes.size() - desti) + tempscua + tempsc;
+		
 
 	}
-	int caixa = CaixaDesti()
+	cout << t << endl;
+
+
+
+	
 }

@@ -1,7 +1,7 @@
 #include <vector>
 #include <queue>
 #include "cjtclients.hh"
-#include "producte.hh"
+
 
 class caixa {
 	private:

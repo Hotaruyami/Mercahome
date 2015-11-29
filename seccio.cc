@@ -1,7 +1,7 @@
-#inculde "seccio.hh"
+#include "seccio.hh"
 
 seccio::seccio(){
-	prod = vector <producte> (40)
+	prod = vector <producte> (40);
 	posicio = "";
 
 }
@@ -14,16 +14,19 @@ seccio::seccio(const vector<producte>& prod,const string posicio){
 
 seccio::~seccio(){}
 
-seccio::afegir_posicio(string posicio){
+void seccio::afegir_posicio(string posicio){
 
 	this->posicio = posicio;
 
 }
 
-seccio::vector<producte> productes(){
-	
+vector<producte> seccio::productes(){
+	vector <producte> buit(0);
 	if (prod.size() != 0)return prod;
-	else cout << "seccio buida" << endl;
+	else {
+		cout << "seccio buida" << endl;
+		return buit;
+	}
 }
 
 

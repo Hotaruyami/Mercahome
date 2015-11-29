@@ -13,6 +13,8 @@ struct client {
 	vector <product> productes;
 	string tempsc;
 	string tempscua;
+	string inicicobr;
+	string finalcobr;
 };
 
 class cjtclients {
@@ -74,7 +76,7 @@ public:
 		/** 
 		\pre prod existeix a super.
 		\post escriu per el STL el producte prod */
-	void afegir_producte(Producte prod);
+	void afegir_producte(producte prod);
 
 		/**
 		\pre el p.i. no esta ple

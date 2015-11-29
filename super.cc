@@ -52,17 +52,17 @@ int super::CaixaDesti(int &Xmax,int y,client c, int &NumProd,cjtclients &clients
 
 int super::SimulacioCaixes(int& normals,int& rapides){
 	for (int i = caixes.size()-1; i >= 0; --i){
-		if (normals + rapides > 0){
-			if (i % 2 == 0) {
+		
+			if (normals != 0) {
 				caixes[i].cambiar_estat(1);
+				--normals
+			}
+			else if (rapides != 0){
+				caixes[i].cambiar_estat(0);
 				--rapides;
 			}
-			else{
-				caixes[i].cambiar_estat(0);
-				--normals;
-			}
-		}	
-		else caixes[i].cambiar_estat(-1);
+		
+			else caixes[i].cambiar_estat(-1);
 	}
 	int i = 0;
 	while (i < clients.size()){

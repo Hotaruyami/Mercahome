@@ -58,6 +58,8 @@ class caixa {
 		int consultar_hora();
 		
 		int estat_caixa();
+
+		int n_clients();
 		
 		/**
 		\pre cert.

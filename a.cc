@@ -13,7 +13,7 @@ int Caixa_Desti() {
 						caixa = i+1;
 						climax = caixes[i+1].n_clients();
 					}
-					else{
+					else if (caixes[i].estat_caixa() == 1){
 
 						caixa = i;
 						climax = caixes[i+1].n_clients();
@@ -27,9 +27,9 @@ int Caixa_Desti() {
 						caixa = i; 
 						climax = caixes[i+1].n_clients();
 					}
-					else if (caixes[i].estat_caixa() == 1){
-						b = true;
-						caixa = i + 1;
+					else if (caixes[i].estat_caixa() == 1 and caixes[i+1].estat_caixa() == 0){
+						
+						
 						climax = caixes[i+1].n_clients();
 					}
 				}
@@ -64,4 +64,5 @@ int Caixa_Desti() {
 		}
 		++i;
 	}
+
 }

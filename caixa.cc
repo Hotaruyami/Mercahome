@@ -39,6 +39,9 @@ void caixa::esborrar_client(){
 	cua.pop();
 
 }
+int caixa::n_clients (){
+	return cua.size();
+}
 int consultar_hora(){ 
 	return hora;
 }

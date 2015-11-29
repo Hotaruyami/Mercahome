@@ -28,28 +28,26 @@ vector<producte> super::productes_seccio(string seccio){
 }
 
 int super::CaixaDesti(int &Xmax,int y,client c, int &NumProd,cjtclients &clients) {
-	int i = caixes.size()-1;
-	int caixa = 0;
+	int i = 0;
+
+
+	int climin = 0;
 	
-	while (i > 0){
+	while (i < caixes.size()){
 		if (clients.vectorprod(c).size() > 10){
-			if ((caixes[i].n_clients() > 7 and caixes[i-1].estat_caixa() == 0){
-				caixa = i-1;
-				
-			}
-			else if (caixes[i].estat_caixa() == 0) caixa = i;
+			if (i == 0) climin = i;
+			else if(caixes[i].n_clients() <= caixes[climin].n_clients() and caixes[i].estat_caixa() == 0)climin = i;
 		}
 		else {
-			if (caixes[i].n_clients() > 7 ){
-				caixa = i-1;
-				
-			}
-			else  caixa = i;
+			if (i == 0) climin = i;
+			else if(caixes[i].n_clients() <= caixes[climin].n_clients() and caixes[i].estat_caixa() != -1)climin = i;
 
 		}
-		--i;
+		++i;
 	}
-	return caixa;
+
+
+	return climin;
 }
 
 int super::SimulacioCaixes(int& normals,int& rapides){

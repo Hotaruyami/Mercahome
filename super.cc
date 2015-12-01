@@ -27,7 +27,7 @@ vector<producte> super::productes_seccio(string seccio){
 
 }
 
-int super::CaixaDesti(int &Xmax,int y,client c, int &NumProd,cjtclients &clients) {
+int super::CaixaDesti(int &Xmax,int y,client c,cjtclients &clients) {
 	int i = 0;
 
 
@@ -71,14 +71,27 @@ int super::SimulacioCaixes(int& normals,int& rapides){
 	int tempscua;
 	while (i < clients.size()){
 		int desti = caixadesti(clients[i]);
-		caixes[desti].afegir_client(clients[i]);
+		
 		if (caixes[desti].n_clients()==0) {
 			tempscua = 0;
 
 		}
 
+		
 		else tempscua = de_string_a_int(caixes[desti].temps_de_la_cua());
-		caixes[desti].cobrar_client();
+		caixes[desti].afegir_client(clients[i]);
+		int tempsc = caixes[desti].cobrar_client(clients[i]);
+		
+		caixes[desti].treure_cua();
+		
+
+		clients[i].inicicobr = de_string_a_int(clients[i].instant) + (caixes.size()-desti) + tempscua;
+		clients[i].finalcobr = clients[i].inicicobr + tempsc;
+		
+		for (int k = 0;k < i;++k){
+			if((de_string_a_int(clients[i].instant) + (caixes.size() - desti)) < caixes[desti].
+		}
+		
 		cout << numero << " " << (caixes.size()-desti) + tempscua << ((caixes.size()-desti) + tempscua) + tempsc << endl;
 		++i;
 		t = t + (caixes.size() - desti) + tempscua + tempsc;

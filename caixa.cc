@@ -12,16 +12,18 @@ caixa::caixa(int estat){
 
 caixa::~caixa(){}
 
-int caixa::cobrar_client(){
+int caixa::cobrar_client(client& c){
 	cjtclients a;
 	int i = 0;
-	client aux = cua.front();
-	a.afegir_client(aux);
+	
+	a.afegir_client(c);
+	
+	
 	cua.pop();
 	int tempsc = 0;
 	//error: no es pot igualar
 	//fer consultar producte super
-	vector <producte> prod = a.vectorprod(aux);
+	vector <producte> prod = a.vectorprod(c);
 	while (i < prod.size()){
 		tempsc = tempsc + prod[i].consultar_tempsc();
 		i = i + 1;
@@ -30,6 +32,7 @@ int caixa::cobrar_client(){
 	hora = de_int_a_string(horita);
 	return tempsc;
 }
+
 void caixa::afegir_client(client& c){
 	cua.push (c);
 	hora = c.instant;

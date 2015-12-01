@@ -36,7 +36,7 @@ class caixa {
 
 	//Modificadores
 
-		int cobrar_client();
+		int cobrar_client(client& c);
 
 		/**	
 		\pre cert.
@@ -48,6 +48,7 @@ class caixa {
 		/**
 		\pre cert.
 		\post c forma part de la cua */
+		string temps_de_la_cua(const client& c);
 		void cambiar_estat(int estat);
 		/**
 		\pre la caixa te estat.

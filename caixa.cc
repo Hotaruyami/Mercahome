@@ -3,8 +3,8 @@
 #include "temps.cc"
 
 caixa::caixa(int estat){
-	maxcua = 20;
-	queue<client> cua(maxcua);
+	
+	queue<client> cua;
 	hora = "00:00:00";
 	this->estat = estat;
 	
@@ -13,7 +13,7 @@ caixa::caixa(int estat){
 caixa::~caixa(){}
 
 int caixa::cobrar_client(client& c){
-	cjtclients a;
+	/**cjtclients a;
 	int i = 0;
 	
 	a.afegir_client(c);
@@ -31,6 +31,7 @@ int caixa::cobrar_client(client& c){
 	int horita = de_string_a_int(hora) + tempsc;
 	hora = de_int_a_string(horita);
 	return tempsc;
+	*/
 }
 
 void caixa::afegir_client(client& c){
@@ -49,8 +50,8 @@ void caixa::esborrar_client(){
 int caixa::n_clients (){
 	return cua.size();
 }
-int consultar_hora(){ 
-	return hora;
+int caixa::consultar_hora(){ 
+	return de_string_a_int(hora);
 }
 int caixa::estat_caixa(){
 	return estat;

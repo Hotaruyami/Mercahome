@@ -1,8 +1,5 @@
 #include "cjtclients.hh"
 
-
-
-
 cjtclients::cjtclients(){
 	maxclients = 30;
 	clients = vector<client>(maxclients);
@@ -24,15 +21,25 @@ void cjtclients::ordenar_cjt (){
 		}
 	}
 }
-vector <product> cjtclients::vectorprod(client& c){
+
+int cjtclients::tempsc_consu(client& c){
 	bool b = false;
 	int i = 0;
+	int res = 0;
 	while (not b){
-		if (clients[i].numero == c.numero) b = true;
-		i = i +1;
+		if (clients[i].numero == c.numero){
+			int tam = clients[i].productes.size();
+			b = true;
+			for(int j = 0; j < tam; ++j){
+				res += (clients[i].productes[j].consultar_tempsc())*clients[i].productes[j].consultar_quantitat();
+			}
+		}
+		++i;
 	}
-	return clients[i].productes;
+	return res;
 }
+
+
 void cjtclients::afegir_client(client& c){
 	if(nclients < maxclients){ // hi caben clients
 		int i = nclients-1;
@@ -65,9 +72,8 @@ int cjtclients::nombre_clients(){
 
 void cjtclients::llegir(int& L){	
 	for (int i = 0; i < L; ++i){
-		int N,N1;
-		string aux;
-		int aux1;
+		int N,N1,aux1,aux_quant;
+		string aux, aux_nom;
 		cin >> aux1 >> aux >> N1;
 	if(aux.size() != 8 or aux1 <= 0 ){
 		cout << "error" << endl;
@@ -78,15 +84,15 @@ void cjtclients::llegir(int& L){
 		clients[i].instant = aux;
 		clients[i].numero = aux1;
 		for(int j = 0; j < N; ++j){
-			cin >> clients[i].productes[j].quantitat >> clients[i].productes[j].nom;
+			cin >> aux_quant >> aux_nom;
+			clients[i].productes[j].modi_quantitat(aux_quant);
+			clients[i].productes[j].modi_nom(aux_nom);
 		}
+
 	}
 	}
 }
 	
-
-	
-
 	void escriure_producte(producte prod){
 		cout << prod.consultar_nom() << " " <<prod.consultar_seccio() << " " << prod.consultar_tempsc() << " " << prod.consultar_preu() << endl;
 	}

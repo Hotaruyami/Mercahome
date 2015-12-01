@@ -1,16 +1,11 @@
 #include <vector>
 #include "producte.hh"
 
-struct product {
-	int quantitat;
-	string nom;
-};
-
 struct client {
 
 	string instant;
 	int numero;
-	vector <product> productes;
+	vector <producte> productes;
 	string tempsc;
 	string tempscua;
 	string inicicobr;
@@ -49,11 +44,13 @@ public:
 	\post afegim un nou client a cjt_clients */
 
 	//Consultores:
-	
-	vector <product> vectorprod(client& c);
+	int tempsc_consu(client& c);
+	/**
+	\pre cert 
+	\post retorna la suma dels temps de cobrament dels productes d'un client
+	*/
+
 	int nombre_clients();
-	
-	
 	/**
 	\pre cert
 	\post retorna el numero de clients del cjt_clients

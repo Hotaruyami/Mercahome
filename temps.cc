@@ -1,12 +1,6 @@
 #include <iostream>
 #include <string>
 using namespace std;
-int de_string_a_int(string hora);
-int main () {
-	cout << de_string_a_int("23:59:59") << endl;
-
-}
-	
 
 string de_int_a_string(int temps) {
 	string hora = "";

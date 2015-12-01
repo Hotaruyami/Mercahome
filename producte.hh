@@ -15,6 +15,7 @@ private:
 	string seccio;
 	double preu;
 	int tempsc;
+	int quantitat;
 	
 	// invariant de la representacio:
 	
@@ -31,7 +32,7 @@ public:
 
 	/** @brief segurament necessitem creadores diferents, poso la mes general i la mes completa */	
 
-	producte(string nom, double preu, int tempsc, string seccio);
+	producte(string nom, double preu, int tempsc, string seccio, int quantitat);
 /**
 	\pre preu >= 0,tempsc >= 0
 	\post el resultat es un producte amb nom = “nom”, preu = “preu”, tempsc = “tempsc”, seccio = “seccio” */
@@ -41,9 +42,22 @@ public:
 	~producte();
 
 	//Modificadores
+	void modi_quantitat(const int& x);
+	/** 
+	\pre cert
+	\post afegeix la quantitat al parametre implicit */
 
+	void modi_nom(const string& a);
+	/** 
+	\pre cert
+	\post afegeix al parametre implicit, el nom */
 
 //Consultores
+
+	int consultar_quantitat();
+	/** 
+	\pre el parametre implicit té preu
+	\post retorna la quantitat del parametre implicit */
 
 	string consultar_nom ();
 	

@@ -1,17 +1,17 @@
 #include "Super.hh"
 
 super::super(){
-	seccions = vector<vector<seccio>>(10(10));
+	seccions = vector<vector<seccio> >(10(10));
 	caixes = vector<caixa>(10);
 	temps = "00:00:00";
 	productes = vector<producte>(40);
 }
 
-super::super(vector<vector <seccio>> seccions,vector <caixa> caixes){
+super::super(vector<vector <seccio> > seccions,vector <caixa> caixes){
 	
 	this->seccions = seccions;
 	this->caixes = caixes;
-	temps = "00:00:00"
+	temps = "00:00:00";
 	productes = vector<producte>(40);
 }
 
@@ -50,28 +50,81 @@ vector<string> super::ordreLexico(vector <string>& v, vector <string>& a){
 	}
 	return res;
 }
+int super::disecuencia(vector <string> trajecte){
+	int i,res;
+	i = res = 0;
+	int punterfin = seccions.size();
+	string punterini = "A1";
+
+	res += distanci(punterini, trajecte[i]);
+	while(i <= trajecte.size()-2){
+		res += distanci(trajecte[i], trajecte[i+1]);
+		++i;
+	}
+	punterini[1] = punterfin;
+	res += distanci(trajecte[i], punterini);
+	return res;
+}
+
+void super::recami(int aux,int& distmin, int longitudS, vector <string>& traject, vector <string>& anterior){
+	int j = 0;
+	if(aux == longitudS-1){
+		int d = disecuencia(traject);
+		if(d == distmin){
+			anterior = ordreLexico(traject, anterior);
+		}
+		if(d < distmin){
+			distmin = d;
+			anterior = traject;
+		}
+	}
+	else{
+		j = aux;
+		while(j < longitudS){
+			swap(traject[aux], traject[j]);
+			recami(aux+1, distmin, longitudS, traject, anterior);
+			swap(traject[aux], traject[j]);
+			++j;
+		}
+	}
+}
 
 void super::optim (client comprador){
-	//Treiem "distància" i "secuenciaRes"
-	cout << distancia << endl;
+	int tam = comprador.productes.size();
+	int distmin = seccions.size() * seccions[0].size();
+	int aux = 0;
+	string punterini =  "A1";
+	vector <string> traject (tam);
+	vector <string> secuenciaRes (tam);
+	
+	for(int i = 0; i < tam; ++i){
+		traject[i] = comprador.productes[i].consultar_seccio();
+	}
+	recami(aux,distmin,tam,traject,secuenciaRes);
 
-	cout << secuenciaRes[0];
-	for(int i = 1; i < tam; ++i){
+
+	//Treiem "distància" i "secuenciaRes"
+	cout << distmin << endl;
+
+	cout << punterini;
+	for(int i = 0; i < tam; ++i){
 		cout << " " << secuenciaRes[i];
-	} cout << endl;
+	}
+	punterini[1] = seccions.size();
+	cout << " " << punterini << endl;
 }
 
 
 vector<producte> super::productes_seccio(string seccio){	
-	return mercat[int(seccio[0])][int(seccio[1])].productes();
+	return seccions[int(seccio[0])][int(seccio[1])].productes();
 }
 
-int super::CaixaDesti(int &Xmax,int y,client c, int &NumProd,cjtclients &clients) {
+int super::caixaDesti(int &Xmax,int y,client c, int &NumProd,cjtclients &clients) {
 	int i = 0;
 	int climin = 0;
 	
 	while (i < caixes.size()){
-		if (clients.vectorprod(c).size() > 10){
+		if (c.productes.size() > 10){ // ?? he fet un canvi perquè la funció de vector de productes ja no existia
 			if (i == 0) climin = i;
 			else if(caixes[i].n_clients() <= caixes[climin].n_clients() and caixes[i].estat_caixa() == 0)climin = i;
 		}
@@ -84,11 +137,11 @@ int super::CaixaDesti(int &Xmax,int y,client c, int &NumProd,cjtclients &clients
 	return climin;
 }
 
-int super::SimulacioCaixes(int& normals,int& rapides){
+/*int super::SimulacioCaixes(int& normals,int& rapides){
 	for (int i = caixes.size()-1; i >= 0; --i){
 			if (normals != 0) {
 				caixes[i].cambiar_estat(1);
-				--normals
+				--normals;
 			}
 			else if (rapides != 0){
 				caixes[i].cambiar_estat(0);
@@ -102,4 +155,4 @@ int super::SimulacioCaixes(int& normals,int& rapides){
 
 	}
 	int caixa = CaixaDesti()
-}
+}*/

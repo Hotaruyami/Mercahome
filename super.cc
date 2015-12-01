@@ -32,12 +32,8 @@ int super::distanci(string ini, string fin){
 	return distL + distN; //Funciona? sino, transformar a int els [1] i a char els [0]
 }
 
-<<<<<<< Updated upstream:super.cc
-int super::CaixaDesti(int &Xmax,int y,client c,cjtclients &clients) {
-=======
 vector<string> super::ordreLexico(vector <string>& v, vector <string>& a){
 	bool ordenat = false;
->>>>>>> Stashed changes:super2.cc
 	int i = 0;
 	int tam = v.size();
 	vector <string> res(tam);
@@ -89,60 +85,21 @@ int super::CaixaDesti(int &Xmax,int y,client c, int &NumProd,cjtclients &clients
 }
 
 int super::SimulacioCaixes(int& normals,int& rapides){
-	int j = normals;
-	int k = rapides;
 	for (int i = caixes.size()-1; i >= 0; --i){
-<<<<<<< Updated upstream:super.cc
-		
-			if (j != 0) {
-=======
 			if (normals != 0) {
->>>>>>> Stashed changes:super2.cc
 				caixes[i].cambiar_estat(1);
-				--j;
+				--normals
 			}
-			else if (k != 0){
+			else if (rapides != 0){
 				caixes[i].cambiar_estat(0);
-				--k;
+				--rapides;
 			}
 		
 			else caixes[i].cambiar_estat(-1);
 	}
 	int i = 0;
-	int t;
-	int tempscua;
 	while (i < clients.size()){
-		int desti = caixadesti(clients[i]);
-		
-		if (caixes[desti].n_clients()==0) {
-			tempscua = 0;
-
-		}
-
-		
-		else tempscua = de_string_a_int(caixes[desti].temps_de_la_cua());
-		caixes[desti].afegir_client(clients[i]);
-		int tempsc = caixes[desti].cobrar_client(clients[i]);
-		
-		caixes[desti].treure_cua();
-		
-
-		clients[i].inicicobr = de_string_a_int(clients[i].instant) + (caixes.size()-desti) + tempscua;
-		clients[i].finalcobr = clients[i].inicicobr + tempsc;
-		
-		for (int k = 0;k < i;++k){
-			if((de_string_a_int(clients[i].instant) + (caixes.size() - desti)) < caixes[desti].
-		}
-		
-		cout << numero << " " << (caixes.size()-desti) + tempscua << ((caixes.size()-desti) + tempscua) + tempsc << endl;
-		++i;
-		t = t + (caixes.size() - desti) + tempscua + tempsc;
-		
 
 	}
-	cout << t << endl;
-
-
-
-	
+	int caixa = CaixaDesti()
 }

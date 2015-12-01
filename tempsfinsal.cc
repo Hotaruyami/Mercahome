@@ -66,9 +66,6 @@ string de_int_a_string(int temps) {
 	return hora;
 }
 
-
-
-
 int de_string_a_int(string hora) {
 int temps = 0;
 string aux = "";

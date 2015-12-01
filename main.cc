@@ -61,6 +61,8 @@ int main() {
 	  int comprador_id;
 	  cin >> comprador_id;
 	  mercat.optim(comprador_id);
+	  //Llargada millor cami
+	  // secuència a seguir
 	  
 	}
 	else if (ordre == "simular"){

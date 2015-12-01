@@ -63,13 +63,12 @@ int cjtclients::nombre_clients(){
 	return nclients;	
 }
 
-void cjtclients::llegir(int& L){
-	
+void cjtclients::llegir(int& L){	
 	for (int i = 0; i < L; ++i){
-	int N,N1;
-	string aux;
-	int aux1;
-	cin >> aux1 >> aux >> N1;
+		int N,N1;
+		string aux;
+		int aux1;
+		cin >> aux1 >> aux >> N1;
 	if(aux.size() != 8 or aux1 <= 0 ){
 		cout << "error" << endl;
 		
@@ -78,7 +77,6 @@ void cjtclients::llegir(int& L){
 		N = N1;
 		clients[i].instant = aux;
 		clients[i].numero = aux1;
-		
 		for(int j = 0; j < N; ++j){
 			cin >> clients[i].productes[j].quantitat >> clients[i].productes[j].nom;
 		}

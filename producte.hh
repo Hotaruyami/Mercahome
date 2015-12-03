@@ -1,3 +1,5 @@
+#ifndef PRODUCTE_HH
+#define PRODUCTE_HH
 #include <string>
 #include <iostream>
 using namespace std;
@@ -93,3 +95,4 @@ public:
 	\post s’han escrit els atributs del p.i. al canal estandard de sortida*/
 
 };
+#endif

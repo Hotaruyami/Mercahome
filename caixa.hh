@@ -23,7 +23,7 @@ class caixa {
 	
 	//Constructores
 
-		caixa(int estat);
+		caixa();
 
 		/**
 		\pre cert.

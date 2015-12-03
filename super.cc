@@ -1,7 +1,7 @@
-#include "Super.hh"
+#include "super.hh"
 
 super::super(){
-	seccions = vector<vector<seccio> >(10(10));
+	seccio seccions [10][10];
 	caixes = vector<caixa>(10);
 	temps = "00:00:00";
 	productes = vector<producte>(40);

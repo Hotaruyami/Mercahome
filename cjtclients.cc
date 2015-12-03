@@ -93,6 +93,6 @@ void cjtclients::llegir(int& L){
 	}
 }
 	
-	void escriure_producte(producte prod){
+	void cjtclients::escriure_producte(producte prod){
 		cout << prod.consultar_nom() << " " <<prod.consultar_seccio() << " " << prod.consultar_tempsc() << " " << prod.consultar_preu() << endl;
 	}

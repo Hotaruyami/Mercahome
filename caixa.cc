@@ -2,11 +2,11 @@
 #include <string>
 #include "temps.cc"
 
-caixa::caixa(int estat){
+caixa::caixa(){
 	
 	queue<client> cua;
 	hora = "00:00:00";
-	this->estat = estat;
+	estat = -1;
 	
 }
 

@@ -5,7 +5,7 @@
 
 class caixa {
 	private:
-		int maxcua;
+		
 		string hora;
 
 		int estat; 
@@ -43,7 +43,7 @@ class caixa {
 		\post Hi ha un client menys a la cua, s’ha sumat el temps de cobrament
 		 del client al temps total de la caixa */	
 		
-		void afegir_client(client &c) ;
+		void afegir_client(client& c) ;
 		
 		/**
 		\pre cert.
@@ -67,7 +67,7 @@ class caixa {
 		\post retorna un enter segons el cual determinem
 		 si la caixa esta oberta, tancada, o es rapida */
 			
-		string temps_de_la_cua (string temps);
+		
 		
 		/**
 		\pre hora < 59:59:60 .

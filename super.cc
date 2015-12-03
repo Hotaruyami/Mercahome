@@ -1,4 +1,5 @@
 #include "super.hh"
+#include "temps.cc"
 
 super::super(){
 	seccio seccions [10][10];

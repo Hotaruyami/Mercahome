@@ -1,5 +1,6 @@
 #include "cjtclients.hh"
 
+
 cjtclients::cjtclients(){
 	maxclients = 30;
 	clients = vector<client>(maxclients);
@@ -91,6 +92,7 @@ void cjtclients::llegir(int& L){
 
 	}
 	}
+	
 }
 	
 	void cjtclients::escriure_producte(producte prod){

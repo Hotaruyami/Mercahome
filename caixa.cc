@@ -16,7 +16,7 @@ int caixa::cobrar_client(client& c){
 	cjtclients a;
 	int i = 0;
 	a.afegir_client(c);
-	cua.pop();
+	
 
 	int tempsc = a.tempsc_consu(c);
 
@@ -38,7 +38,7 @@ void caixa::esborrar_client(){
 	cua.pop();
 
 }
-int caixa::n_clients (){
+int caixa::n_clients(){
 	return cua.size();
 }
 int caixa::consultar_hora(){ 

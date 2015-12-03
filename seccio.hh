@@ -17,14 +17,14 @@ class seccio {
 	
 	/**
 	\pre cert.
-	\post crea una secció buida */
+	\post crea una seccio buida */
 	
 		
 	seccio(const vector<producte>& prod,const string posicio) ;
 	
 	/**
 	\pre cert.
-	\post crea una secció amb el vector de productes “prod” */
+	\post crea una seccio amb el vector de productes “prod” */
 
 	
 	//Destructora

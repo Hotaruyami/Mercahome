@@ -89,7 +89,7 @@ public:
 		\post Calcula i escriu el temps segons la configuració 
 		de caixes. Per a cada configuració un temps. */
 
-		int TempsPagament(int TempsDespl, int TempsCaixa, int TempsCua);
+		
 
 	
 		

@@ -211,9 +211,12 @@ int super::SimulacioCaixes(int& normals,int& rapides){
 			clients[i].inicicobr = de_string_a_int(c.instant) + (tam - c.caixaAs);
 		}
 		else clients[i].inicicobr = de_string_a_int(c.instant) + caixes[i].consultar_hora() +(tam - c.caixaAs);
+
 		clients[i].finalcobr = clients[i].inicicobr + tempsc_consu(clients[i]);
+
 		cout << clients[i].numero << " " << clients[i].caixaAs << " " << clients[i].inicicobr << " " << clients[i].finalcobr << endl;
 		horat += de_string_a_int(tempsc_consu(clients[i])); ;
+		cobrar_client(clients[i]);
 		++i;
 	}
 	cout << de_int_a_string(int horat) << endl;

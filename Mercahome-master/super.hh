@@ -20,15 +20,15 @@ private:
 	int distanci(string ini, string fin);
 	/**
 		\pre cert.
-		\post retorna la distancia entre les dues seccions del parametre	*/
+		\post retorna la distancia entre les dues seccions del paràmetre	*/
 	vector<string> ordreLexico(vector <string>& v, vector <string>& a);
 	/**
 		\pre cert.
-		\post retorna el vector menor, lexicograficament	*/
+		\post retorna el vector menor, lexicogràficament	*/
 	void recami(int aux,int& distmin, int longitudS, vector <string>& traject, vector <string>& anterior);
 	/**
 		\pre cert.
-		\post recursivament dona la distància minima d'un client determinat	*/
+		\post recursivament dona la distància mínima d'un client determinat	*/
 	int disecuencia(vector <string> trajecte);
 	/**
 		\pre cert.
@@ -39,7 +39,8 @@ public:
 
 	//constructora
 	
-		
+		super();
+
 		/**
 		\pre cert.
 		\post es crea un supermercat buit.	*/
@@ -61,6 +62,7 @@ public:
 		
 	
 	//consultores
+		void afegir_producte(const producte& prod);
 	
 		vector <producte> productes_seccio(string seccio);
 		
@@ -68,7 +70,9 @@ public:
 		\pre la seccio “seccio” existeix.
 		\post retorna un vector amb els productes que pertanyen a la seccio “seccio”. */
 
-		//int caixaDesti(int &Xmax,int y,client c, int &NumProd,cjtclients &clients);
+		producte consultar_producte(const string& nom);
+
+		int caixaDesti(int &Xmax,int y,client c, int &NumProd,cjtclients &clients);
 
 		/** 
 		\pre el nombre de caixes no és nul
@@ -85,7 +89,7 @@ public:
 
 		/** 
 		\pre cert
-		\post Calcula i escriu el temps segons la configuracio 
+		\post Calcula i escriu el temps segons la configuració 
 		de caixes. Per a cada configuració un temps. */
 
 		

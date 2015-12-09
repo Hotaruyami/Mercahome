@@ -1,5 +1,5 @@
 #include "producte.hh"
-using namespace std;
+
 producte::producte(){
 	nom = "";
 	seccio = ""; 	

@@ -1,7 +1,12 @@
 #include "super.hh"
 #include "temps.cc"
 
-using namespace std;
+super::super(){
+	seccio seccions [10][10];
+	caixes = vector<caixa>(10);
+	temps = "00:00:00";
+	productes = vector<producte>(40);
+}
 
 super::super(vector<vector <seccio> > seccions,vector <caixa> caixes){
 	
@@ -12,6 +17,31 @@ super::super(vector<vector <seccio> > seccions,vector <caixa> caixes){
 }
 
 super::~super(){}
+
+void super::afegir_producte(const producte& prod){
+	int i = 0;
+	while (productes[i].consultar_nom() != "") {
+		++i;
+
+	}
+	if (i == productes.size()) productes.push_back(prod);
+	else productes[i-1] = prod;
+
+}
+
+producte super::consultar_producte(const string& nom){
+	bool b = false;
+	producte aux;
+	int i = 0;
+	while (not b){
+		if(nom == productes[i].consultar_nom()){
+			b = true;
+			return productes[i];
+		}
+		++i;
+	}
+	return aux;
+}
 
 void super::swap(string& x, string& y){
 	string c = x;
@@ -115,7 +145,7 @@ vector<producte> super::productes_seccio(string seccio){
 	return seccions[int(seccio[0])][int(seccio[1])].productes();
 }
 
-/** int super::caixaDesti(int &Xmax,int y,client c, int &NumProd,cjtclients &clients) {
+int super::caixaDesti(int &Xmax,int y,client c, int &NumProd,cjtclients &clients) {
 	int i = 0;
 	int climin = 0;
 	
@@ -132,7 +162,7 @@ vector<producte> super::productes_seccio(string seccio){
 	}
 	return climin;
 }
-*/
+
 /*int super::SimulacioCaixes(int& normals,int& rapides){
 	for (int i = caixes.size()-1; i >= 0; --i){
 			if (normals != 0) {

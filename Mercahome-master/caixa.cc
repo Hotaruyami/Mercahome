@@ -1,7 +1,6 @@
 #include "caixa.hh"
 #include <string>
 #include "temps.cc"
-using namespace std;
 
 caixa::caixa(){
 	

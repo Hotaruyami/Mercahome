@@ -3,11 +3,12 @@
 
 using namespace std;
 
-string de_int_a_string(int temps) {
+/** Tipus de modul: funcions
+	  Descripcio del tipus: arxiu de funcions del tipus de dades temps.  */
+
+string de_int_a_string(int temps) { //De temps int a temps string
 	string hora = "";
 	int segons,minuts,hores;
-
-
 	segons = temps % 60;
 	//si hi ha minuts
 	if (temps >= 60){
@@ -40,9 +41,6 @@ string de_int_a_string(int temps) {
 					}
 					else hora = "0" + to_string(hores) + ":0" + to_string(minuts) + ":0" + to_string(segons);
 				}
-				
-				
-
 			}
 		}
 		else {
@@ -60,18 +58,11 @@ string de_int_a_string(int temps) {
 	else{
 		if (segons >= 10) hora = "00:00:" + to_string(segons); 
 		else hora = "00:00:0" + to_string(segons);
-		
-
 	}
-
-	
 	return hora;
 }
 
-
-
-
-int de_string_a_int(string hora) {
+int de_string_a_int(string hora) { //De temps string a temps int
 long int temps = 0;
 string aux = "";
 

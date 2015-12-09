@@ -103,12 +103,10 @@ void cjtclients::llegir(int& L){
 			clients[i].productes[j].modi_quantitat(aux_quant);
 			clients[i].productes[j].modi_nom(aux_nom);
 		}
-
 	}
-	}
-	
+	}	
 }
 	
-	void cjtclients::escriure_producte(producte prod){
-		cout << prod.consultar_nom() << " " <<prod.consultar_seccio() << " " << prod.consultar_tempsc() << " " << prod.consultar_preu() << endl;
-	}
+void cjtclients::escriure_producte(producte prod){
+	cout << prod.consultar_nom() << " " <<prod.consultar_seccio() << " " << prod.consultar_tempsc() << " " << prod.consultar_preu() << endl;
+}

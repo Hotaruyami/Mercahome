@@ -59,42 +59,39 @@ public:
 
 	//Modificadores
 
+		void caixaDesti(int &Xmax,int y,client c, int &NumProd,cjtclients &clients);
+		/** 
+		\pre el nombre de caixes no és nul
+		\post guarda al client la seva caixa asignada */
 		
 	
 	//consultores
 		void afegir_producte(const producte& prod);
+		/**
+		\pre cert.
+		\post prod s'afegeix a "productes". */
 	
 		vector <producte> productes_seccio(string seccio);
-		
 		/**
 		\pre la seccio “seccio” existeix.
 		\post retorna un vector amb els productes que pertanyen a la seccio “seccio”. */
 
 		producte consultar_producte(const string& nom);
-
-		int caixaDesti(int &Xmax,int y,client c, int &NumProd,cjtclients &clients);
-
-		/** 
-		\pre el nombre de caixes no és nul
-		\post retorna el nombre  de  caixa a la cual s’ha d’assignar el client. */
+		/**
+		\pre cert.
+		\post retorna un element de "productes", amb nom = "nom". */
 
 		void optim (client comprador);
-
 		/**
 		\pre cert.
 		\post escriu pel STL el camí mes optim d’un client pel supermercat 
 		\i la seva llargada. */
 
 		//int SimulacioCaixes(int normals, int rapides); 
-
 		/** 
 		\pre cert
 		\post Calcula i escriu el temps segons la configuració 
 		de caixes. Per a cada configuració un temps. */
-
-		
-
-	
 		
 };
 

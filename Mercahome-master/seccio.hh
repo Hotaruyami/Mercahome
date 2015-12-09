@@ -3,18 +3,16 @@
 #include "producte.hh"
 
 class seccio {
+
 	private:
-	
 		vector <producte> prod;
-	
 		string posicio;
 
 	public:
 
 	//Constructores
 	
-	seccio();
-	
+	seccio();	
 	/**
 	\pre cert.
 	\post crea una seccio buida */
@@ -30,20 +28,17 @@ class seccio {
 	//Destructora
 	
 	~seccio();
-
-	//Modificadores:
+	//Modificadores
+	
+	void afegir_posicio(string posicio);
 	/**
-
 	\pre la seccio no te posicio
 	\post la posicio del parametre implicit es "posicio"
 	*/
-	void afegir_posicio(string posicio);
-
 	
 	//Consultores
 	
 	vector<producte> productes();
-	
 	/**
 	\pre cert.
 	\post retorna un vector de productes ordenat pel nom alfabeticament,

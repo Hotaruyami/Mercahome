@@ -24,7 +24,6 @@ class caixa {
 	//Constructores
 
 		caixa();
-
 		/**
 		\pre cert.
 		\post es crea una caixa buida. */
@@ -37,18 +36,21 @@ class caixa {
 	//Modificadores
 
 		int cobrar_client(client& c);
-
 		/**	
 		\pre cert.
 		\post Hi ha un client menys a la cua, s’ha sumat el temps de cobrament
 		 del client al temps total de la caixa */	
 		
 		void afegir_client(client& c) ;
-		
 		/**
 		\pre cert.
 		\post c forma part de la cua */
+
 		string temps_de_la_cua(const client& c);
+		/**
+		\pre cert.
+		\post retorna el temps de cua de la caixa */
+
 		void cambiar_estat(int estat);
 		/**
 		\pre la caixa te estat.
@@ -57,22 +59,20 @@ class caixa {
 
 	//Consultores
 		int consultar_hora();
+		/**
+		\pre cert.
+		\post retorna la hora de la caixa en format int */
 		
 		int estat_caixa();
-
-		int n_clients();
-		
 		/**
 		\pre cert.
 		\post retorna un enter segons el cual determinem
 		 si la caixa esta oberta, tancada, o es rapida */
-			
-		
-		
-		/**
-		\pre hora < 59:59:60 .
-		\post A la hora del parametre implicit se li suma “temps” i calcula el temps de cua del ultim client. */
 
-			
-	
+		int n_clients();
+		/**
+		\pre cert.
+		\post retorna el numero de clients de la caixa*/
+
+
 };

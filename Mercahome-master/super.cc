@@ -145,22 +145,19 @@ vector<producte> super::productes_seccio(string seccio){
 	return seccions[int(seccio[0])][int(seccio[1])].productes();
 }
 
-int super::caixaDesti(int &Xmax,int y,client c, int &NumProd,cjtclients &clients) {
+void super::caixaDesti(int &Xmax,int y,client c, int &NumProd,cjtclients &clients) {
 	int i = 0;
-	int climin = 0;
-	
 	while (i < caixes.size()){
-		if (c.productes.size() > 10){ // ?? he fet un canvi perquè la funció de vector de productes ja no existia
-			if (i == 0) climin = i;
-			else if(caixes[i].n_clients() <= caixes[climin].n_clients() and caixes[i].estat_caixa() == 0)climin = i;
+		if (c.productes.size() > 10){
+			if (i == 0) c.caixaAs = i;
+			else if(caixes[i].n_clients() <= caixes[climin].n_clients() and caixes[i].estat_caixa() == 0)c.caixaAs = i;
 		}
 		else {
-			if (i == 0) climin = i;
-			else if(caixes[i].n_clients() <= caixes[climin].n_clients() and caixes[i].estat_caixa() != -1)climin = i;
+			if (i == 0) c.caixaAs = i;
+			else if(caixes[i].n_clients() <= caixes[climin].n_clients() and caixes[i].estat_caixa() != -1)c.caixaAs = i;
 		}
 		++i;
 	}
-	return climin;
 }
 
 /*int super::SimulacioCaixes(int& normals,int& rapides){

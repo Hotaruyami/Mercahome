@@ -10,6 +10,7 @@ struct client {
 	string tempscua;
 	string inicicobr;
 	string finalcobr;
+	int caixaAs;
 };
 
 class cjtclients {
@@ -37,7 +38,7 @@ public:
 	~cjtclients();
 
 	//Modificadores
-	
+
 	void afegir_client(client& c) ;
 	/**
 	\pre cert
@@ -46,7 +47,10 @@ public:
 	//Consultores:
 
 	client consultar_client(const int& id);
-
+	/**
+	\pre conjunt de clients no buis 
+	\post retorna el client amb numero = "id"
+	*/
 
 	int tempsc_consu(client& c);
 	/**
@@ -69,19 +73,11 @@ public:
 	*/
 	
 
-		/**
-		\pre ”nom” te un format d’entrada valid.
-		\post retorna el producte amb nom “nom”. */
 	void escriure_producte(producte prod);
+	/** 
+	\pre prod existeix a super.
+	\post escriu per el STL el producte prod */
 
-		/** 
-		\pre prod existeix a super.
-		\post escriu per el STL el producte prod */
-	
-
-		/**
-		\pre el p.i. no esta ple
-		\post “prod” pertany al p.i. i esta afegit al vector de productes */
 
 };
 

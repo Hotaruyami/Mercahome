@@ -3,11 +3,9 @@
 #include "temps.cc"
 
 caixa::caixa(){
-	
 	queue<client> cua;
 	hora = "00:00:00";
 	estat = -1;
-	
 }
 
 caixa::~caixa(){}
@@ -17,7 +15,6 @@ int caixa::cobrar_client(client& c){
 	int i = 0;
 	a.afegir_client(c);
 	
-
 	int tempsc = a.tempsc_consu(c);
 
 	int horita = de_string_a_int(hora) + tempsc;
@@ -48,6 +45,5 @@ int caixa::estat_caixa(){
 	return estat;
 }
 string caixa::temps_de_la_cua(const client& c){
-	
 	return hora;
 }

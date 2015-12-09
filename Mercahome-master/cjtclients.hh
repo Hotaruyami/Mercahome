@@ -22,8 +22,6 @@ private:
 	int nclients;
 	void ordenar_cjt ();
 	
-
-
 public:
 
 	//Constructores

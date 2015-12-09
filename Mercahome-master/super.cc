@@ -55,7 +55,7 @@ int super::distanci(string ini, string fin){
 	int distN = fin[0] - ini[0]; 
 	if(distN < 0) distN = -(distN);
 
-	return distL + distN; //Funciona? sino, transformar a int els [1] i a char els [0]
+	return distL + distN;
 }
 
 vector<string> super::ordreLexico(vector <string>& v, vector <string>& a){
@@ -145,22 +145,52 @@ vector<producte> super::productes_seccio(string seccio){
 	return seccions[int(seccio[0])][int(seccio[1])].productes();
 }
 
-void super::caixaDesti(int &Xmax,int y,client c, int &NumProd,cjtclients &clients) {
-	int i = 0;
-	while (i < caixes.size()){
-		if (c.productes.size() > 10){
-			if (i == 0) c.caixaAs = i;
-			else if(caixes[i].n_clients() <= caixes[climin].n_clients() and caixes[i].estat_caixa() == 0)c.caixaAs = i;
+void super::caixaDesti(client c) {
+	int tam = caixes.size()-1;
+	bool asignat = false;
+	bool igual = false;
+	while(not asignat or tam > 0){
+		if (c.productes.size() > 10){ //Ha d'anar a caixa normal
+			if(caixes[tam].estat == 0){
+				if(caixes[tam].tamany_cua() < caixes[tam-1].tamany_cua())){ // caixa normal i menys clients que la següent
+					c.caixaAs = caixes[tam];
+					asignat = true;
+					igual = false;
+				}
+				else if(caixes[tam].tamany_cua() == caixes[tam-1].tamany_cua())){
+					igual = true;
+				}
+				else if(caixes[tam-1].estat != 0){
+					c.caixaAs = caixes[tam];
+					asignat = true;
+					igual = false;
+				}
+			}
 		}
-		else {
-			if (i == 0) c.caixaAs = i;
-			else if(caixes[i].n_clients() <= caixes[climin].n_clients() and caixes[i].estat_caixa() != -1)c.caixaAs = i;
+		else { //Ha d'anar a caixa rapida
+			if(caixes[tam].estat == 1){
+				if(caixes[tam].tamany_cua() <= caixes[tam-1].tamany_cua())){ // caixa normal i menys clients que la següent
+					c.caixaAs = caixes[tam];
+					asignat = true;
+					igual = false;
+				}
+				else if(caixes[tam].tamany_cua() == caixes[tam-1].tamany_cua())){
+					igual = true;
+				}
+				else if(caixes[tam-1].estat == -1){
+					c.caixaAs = caixes[tam];
+					asignat = true;
+					igaul = false;
+				}
+			}
 		}
-		++i;
+	--tam;
 	}
+	if(igual) c.caixaAs = caixes[caixes.size()-1];
 }
 
-/*int super::SimulacioCaixes(int& normals,int& rapides){
+int super::SimulacioCaixes(int& normals,int& rapides){
+	int horat = 0;
 	for (int i = caixes.size()-1; i >= 0; --i){
 			if (normals != 0) {
 				caixes[i].cambiar_estat(1);
@@ -175,7 +205,16 @@ void super::caixaDesti(int &Xmax,int y,client c, int &NumProd,cjtclients &client
 	}
 	int i = 0;
 	while (i < clients.size()){
-
+		caixaDesti(clients[i]);
+		int tam = caixes.size()-1;
+		if(caixes[i].tamany_cua() == 0){
+			clients[i].inicicobr = de_string_a_int(c.instant) + (tam - c.caixaAs);
+		}
+		else clients[i].inicicobr = de_string_a_int(c.instant) + caixes[i].consultar_hora() +(tam - c.caixaAs);
+		clients[i].finalcobr = clients[i].inicicobr + tempsc_consu(clients[i]);
+		cout << clients[i].numero << " " << clients[i].caixaAs << " " << clients[i].inicicobr << " " << clients[i].finalcobr << endl;
+		horat += de_string_a_int(tempsc_consu(clients[i])); ;
+		++i;
 	}
-	int caixa = CaixaDesti()
-}*/
+	cout << de_int_a_string(int horat) << endl;
+}

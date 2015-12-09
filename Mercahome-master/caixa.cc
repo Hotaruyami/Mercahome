@@ -5,7 +5,7 @@
 caixa::caixa(){
 	queue<client> cua;
 	hora = "00:00:00";
-	estat = -1;
+	estat = -1; // caixa tancada
 }
 
 caixa::~caixa(){}
@@ -25,6 +25,9 @@ int caixa::cobrar_client(client& c){
 void caixa::afegir_client(client& c){
 	cua.push (c);
 	hora = c.instant;
+}
+int tamany_cua(){
+	return cua.size();
 }
 
 void caixa::cambiar_estat(int estat){

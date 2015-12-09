@@ -58,6 +58,11 @@ class caixa {
 
 
 	//Consultores
+		int tamany_cua();
+		/**
+		\pre cert.
+		\post retorna el tamany de la cua */
+
 		int consultar_hora();
 		/**
 		\pre cert.

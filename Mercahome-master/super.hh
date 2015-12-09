@@ -87,7 +87,7 @@ public:
 		\post escriu pel STL el camí mes optim d’un client pel supermercat 
 		\i la seva llargada. */
 
-		//int SimulacioCaixes(int normals, int rapides); 
+		int SimulacioCaixes(int normals, int rapides); 
 		/** 
 		\pre cert
 		\post Calcula i escriu el temps segons la configuració 
